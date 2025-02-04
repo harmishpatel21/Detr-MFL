@@ -35,7 +35,7 @@ async def upload_image(file: UploadFile = File(...)):
     byte_io.seek(0)
     
     processed_path = f"./images/processed_{file.filename}"   
-    img.save(processed_path)
+    processed_img.save(processed_path)
 
     return {"filename": file.filename,
             "processed_image": base64.b64encode(byte_io.getvalue()).decode('utf-8'),
